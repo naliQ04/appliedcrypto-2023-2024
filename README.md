@@ -4,38 +4,37 @@ Dit is een eenvoudig voorbeeld van een beveiligde communicatie tussen een server
 
 ## Installatie
 
-### automatisch
+1. **Clone de repository naar je lokale machine en open deze met Visual Studio Code:**
 
-1. **Een automatische installatie uitvoeren door het shellscript te activeren:**
     ```bash
-    ./setup_script.sh
+    git clone https://github.com/naliQ04/appliedcrypto-2023-2024.git
     ```
 
-### handmatig
+3. **Open een command prompt in visual studio code**
 
-1. **Clone de repository naar je lokale machine:**
 
+4. **Maak een Python virtual environment (venv) aan en activeer deze:**
+
+    venv aanmaken
     ```bash
-    git clone https://github.com/naliQ4/appliedcrypto-2023-2024.git
+    python -m venv venv
     ```
 
-2. **Maak een Python virtual environment (venv) aan en activeer deze:**
-
+    venv activeren indien deze niet is geactiveerd
     ```bash
-    python3 -m venv venv
-    source venv/bin/activate
+    .\.venv\Scripts\activate
     ```
 
-3. **Installeer de vereiste pakketten:**
+5. **Installeer de vereiste pakketten:**
 
     ```bash
-    pip install -r requirements.txt
+    pip3 install -r requirements.txt
     ```
 
-4. **Genereer een zelfondertekend servercertificaat met OpenSSL:**
+6. **Genereer een zelfondertekend servercertificaat met OpenSSL en voer de velden na eigen keuze in:**
 
     ```bash
-    openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout clientcert.key -out clientcert.crt
+    openssl req -x509 -nodes -days 365 -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 -keyout servercert.key -out servercert.crt
     ```
 
 ## Starten van de Server
@@ -60,3 +59,4 @@ Vergeet niet om de Python virtual environment (venv) te deactiveren wanneer je k
 
 ```bash
 deactivate
+```
