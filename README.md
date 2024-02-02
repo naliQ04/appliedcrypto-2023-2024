@@ -65,3 +65,9 @@ Vergeet niet om de Python virtual environment (venv) te deactiveren wanneer je k
 ```bash
 deactivate
 ```
+
+## Modules van toepassing tot dit project
+
+- cryptography
+- socket
+- openssl
