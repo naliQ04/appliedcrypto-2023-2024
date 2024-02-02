@@ -4,9 +4,15 @@ Dit is een eenvoudig voorbeeld van een beveiligde communicatie tussen een server
 
 ## Installatie
 
-## automatisch
+### automatisch
 
-## handmatig
+1. **Een automatische installatie uitvoeren door het shellscript te activeren:**
+    ```bash
+    ./setup_script.sh
+    ```
+
+### handmatig
+
 1. **Clone de repository naar je lokale machine:**
 
     ```bash
@@ -29,7 +35,7 @@ Dit is een eenvoudig voorbeeld van een beveiligde communicatie tussen een server
 4. **Genereer een zelfondertekend servercertificaat met OpenSSL:**
 
     ```bash
-    openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout servercert.key -out servercert.crt
+    openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout clientcert.key -out clientcert.crt
     ```
 
 ## Starten van de Server

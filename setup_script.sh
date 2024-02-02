@@ -10,17 +10,18 @@ source myvenv/bin/activate
 pip install -r requirements.txt
 
 # Voer OpenSSL-opdracht uit om een zelfondertekend servercertificaat te genereren
+
 # Definieer de variabelen voor certificaatinformatie
 COUNTRY="NL"
 STATE="North-Holland"
 CITY="Amsterdam"
-ORGANIZATION="KoeBroccolikoekjekje"
-COMMON_NAME="Broccolikoekje"
-EMAIL="Broccoli@koekje.nl"
+ORGANIZATION="YourClientOrganization"
+COMMON_NAME="YourClientCommonName"
+EMAIL="client@example.com"
 
-# Voer OpenSSL-opdracht uit om een zelfondertekend servercertificaat te genereren
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 \
-    -keyout servercert.key -out servercert.crt \
+# Voer OpenSSL-opdracht uit om een zelfondertekend clientcertificaat te genereren met EC
+openssl req -x509 -nodes -days 365 -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 \
+    -keyout clientcert.key -out clientcert.crt \
     -subj "/C=$COUNTRY/ST=$STATE/L=$CITY/O=$ORGANIZATION/CN=$COMMON_NAME/emailAddress=$EMAIL"
 
 # Deactiveer de venv
