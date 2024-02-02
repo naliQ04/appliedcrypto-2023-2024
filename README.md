@@ -10,10 +10,15 @@ Dit is een eenvoudig voorbeeld van een beveiligde communicatie tussen een server
     git clone https://github.com/naliQ04/appliedcrypto-2023-2024.git
     ```
 
-3. **Open een command prompt in visual studio code**
+3. **zorg ervoor dat je in de directory /appliedcrypto-2023-2024 zin**
 
+    ```bash
+    cd appliedcrypto-2023-2024
+    ```
 
-4. **Maak een Python virtual environment (venv) aan en activeer deze:**
+4. **Open een command prompt in visual studio code**
+
+5. **Maak een Python virtual environment (venv) aan en activeer deze:**
 
     venv aanmaken
     ```bash
@@ -25,13 +30,13 @@ Dit is een eenvoudig voorbeeld van een beveiligde communicatie tussen een server
     .\.venv\Scripts\activate
     ```
 
-5. **Installeer de vereiste pakketten:**
+6. **Installeer de vereiste pakketten:**
 
     ```bash
     pip3 install -r requirements.txt
     ```
 
-6. **Genereer een zelfondertekend servercertificaat met OpenSSL en voer de velden na eigen keuze in:**
+7. **Genereer een zelfondertekend servercertificaat met OpenSSL en voer de velden na eigen keuze in:**
 
     ```bash
     openssl req -x509 -nodes -days 365 -newkey ec -pkeyopt ec_paramgen_curve:prime256v1 -keyout servercert.key -out servercert.crt
